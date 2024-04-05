@@ -1,0 +1,19 @@
+@startuml
+skinparam classAttributeIconSize 0
+caption Diagrama de entidades
+namespace entity {
+    class Cliente {
+        - long id
+        - String nome
+        - String endereco
+
+        + getId():long
+        + setId(id:long):void
+        + getNome():String
+        + setNome(nome:String):void
+        + getEndereco():String
+        + setEndereco(endereco:String ):void
+        
+    }
+}
+@enduml

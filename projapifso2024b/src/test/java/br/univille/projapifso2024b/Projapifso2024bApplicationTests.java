@@ -1,10 +1,10 @@
-package br.univille.projfso2024b;
+package br.univille.projapifso2024b;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Projfso2024bApplicationTests {
+class Projapifso2024bApplicationTests {
 
 	@Test
 	void contextLoads() {
