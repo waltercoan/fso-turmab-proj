@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head th:include="layout :: htmlhead"></head>
+    <body>
+        <main class="container">
+            <nav th:replace="layout :: menu">(menu)</nav>
+            <h1>Cliente</h1>    
+            <form th:action="@{/clientes}"
+                method="POST"
+                th:object="${cliente}">
+                <div class="form-group">
+                    <label for="txtnome">Nome</label>
+                    <input type="text" id="txtnome"
+                        th:field="*{nome}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtendereco">Endereço</label>
+                    <input type="text" id="txtendereco"
+                        th:field="*{endereco}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtdatanascimento">Data Nascimento</label>
+                    <input type="date" id="txtdatanascimento"
+                        th:field="*{dataNascimento}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary"
+                        type="submit">Enviar</button> 
+                </div>
+            </form>
+        </main>
+        <div th:include="layout :: footer">(footer)</div>
+    </body>
+</html>

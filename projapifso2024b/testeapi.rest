@@ -1,3 +1,12 @@
 ### Chamada GET /api/v1/clientes
 GET http://localhost:8081/api/v1/clientes
 
+### Chamada POST /api/v1/clientes
+POST http://localhost:8081/api/v1/clientes
+Content-Type: application/json
+
+{
+    "nome": "Mariazinha da Silva Sauro",
+    "endereco": "Rua lulululul 200",
+    "dataNascimento": "2024-04-22"
+}
