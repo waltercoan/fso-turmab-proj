@@ -10,3 +10,12 @@ Content-Type: application/json
     "endereco": "Rua lulululul 200",
     "dataNascimento": "2024-04-22"
 }
+### Chamada PUT /api/v1/clientes
+PUT http://localhost:8081/api/v1/clientes/1
+Content-Type: application/json
+
+{
+    "nome": "Zezinho da Silva Sauro JUNIOR",
+    "endereco": "Rua lalalala 1000",
+    "dataNascimento": "2024-04-25"
+}
