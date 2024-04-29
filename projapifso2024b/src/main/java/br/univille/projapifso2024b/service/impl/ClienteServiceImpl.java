@@ -30,5 +30,12 @@ public class ClienteServiceImpl
     public List<Cliente> getAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Cliente delete(long id) {
+        var cliente = getById(id);
+        repository.deleteById(id);
+        return cliente;
+    }
     
 }
