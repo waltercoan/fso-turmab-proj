@@ -30,6 +30,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="txtcidade">Cidade</label>
+                    <select class="form-select"
+                        th:field="*{cidade}" id="txtcidade">
+                        <option th:each="umaCidade : ${listaCidades}"
+                                th:text="${umaCidade.nome}"
+                                th:value="${umaCidade.id}"
+                        ></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <button class="btn btn-primary"
                         type="submit">Enviar</button> 
                 </div>

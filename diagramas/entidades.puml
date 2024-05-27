@@ -15,5 +15,19 @@ namespace entity {
         + setEndereco(endereco:String ):void
         
     }
+    class Cidade {
+        - long id
+        - String nome
+        - String estado
+
+        + getId():long
+        + setId(id:long):void
+        + getNome():String
+        + setNome(nome:String):void
+        + getEstado():String
+        + setEstado(estado:String ):void
+        
+    }
+    Cliente "cidade *" -> "1" Cidade
 }
 @enduml
