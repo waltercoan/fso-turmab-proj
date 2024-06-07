@@ -4,11 +4,13 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -25,6 +27,15 @@ public class Cliente {
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
 
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    private Cidade cidade;
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
     public Date getDataNascimento() {
         return dataNascimento;
     }

@@ -8,7 +8,12 @@ Content-Type: application/json
 {
     "nome": "Mariazinha da Silva Sauro",
     "endereco": "Rua lulululul 200",
-    "dataNascimento": "2024-04-22"
+    "dataNascimento": "2024-04-22",
+    "cidade": {
+        "id": 1,
+        "nome": "Joinville",
+        "estado": "Santa Catarina"
+    }
 }
 ### Chamada PUT /api/v1/clientes
 PUT http://localhost:8081/api/v1/clientes/1

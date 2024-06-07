@@ -28,6 +28,10 @@ public class ClienteControllerAPI {
         var listaClientes  = service.getAll();
         return new ResponseEntity<List<Cliente>>(listaClientes, HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Cliente> getClienteById(@PathVariable("id") Cliente cliente){
+        return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<Cliente> post(@RequestBody Cliente cliente){
