@@ -25,8 +25,17 @@ public class Pedido {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="pedido_id")
+    private List<ItemPedido> itensPedido = new ArrayList<>();
 
     
+    public List<ItemPedido> getItensPedido() {
+        return itensPedido;
+    }
+    public void setItensPedido(List<ItemPedido> itensPedido) {
+        this.itensPedido = itensPedido;
+    }
     public long getId() {
         return id;
     }
