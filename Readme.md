@@ -141,3 +141,71 @@ DB_PASSWORD=
 ### Desabilitar a opção que obriga a conexão por TLS
 - Desabilitar o server parameter require_secure_transport para OFF
 ![Azure - MySQL - require_secure_transport](diagramas/png/azure-mysql-1.png "require_secure_transport")
+
+
+## Deploy da app no Azure
+- Configurar o diretório do Java na variável de ambiente PATH do windows
+- Criar a variável de ambiente JAVA_HOME apontando para a pasta principal do java
+- Entrar na pasta principal do projeto
+```
+cd .\projfso2024b\
+```
+- Realizar login na linha de comando do Azure, caso não tenha faça instalação (https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+```
+az login
+``` 
+- Instalar o pluggin de deploy da aplicação
+```
+mvn com.microsoft.azure:azure-webapp-maven-plugin:2.9.0:config
+```
+
+```
+Create new run configuration (Y/N) [Y]: Y
+Define value for OS [Linux]:
+  1: Windows
+* 2: Linux
+  3: Docker
+Enter your choice: 2
+Define value for javaVersion [Java 17]:
+  1: Java 8
+  2: Java 11
+* 3: Java 17
+Enter your choice: 3
+Define value for pricingTier [P1v2]:
+   1: B1
+   2: B2
+   3: B3
+   4: D1
+   5: EP1
+   6: EP2
+   7: EP3
+   8: F1
+*  9: P1v2
+  10: P1v3
+  11: P2v2
+  12: P2v3
+  13: P3v2
+  14: P3v3
+  15: S1
+  16: S2
+  17: S3
+  18: Y1
+Enter your choice: 8
+Please confirm webapp properties
+AppName : projfso2024b-1718931891464
+ResourceGroup : projfso2024b-1718931891464-rg
+Region : centralus
+PricingTier : F1
+OS : Linux
+Java Version: Java 17
+Web server stack: Java SE
+Deploy to slot : false
+Confirm (Y/N) [Y]: Y
+```
+
+- Faça o deploy da aplicação
+```
+mvn package azure-webapp:deploy -DskipTests
+```
+- Configurar as seguintes variáveis de ambiente no Web App
+![Azure - Web App](diagramas/png/azure-webapp-1.png "Azure - Web App")
