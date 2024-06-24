@@ -2,6 +2,7 @@ package br.univille.projapifso2024b.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -25,6 +26,7 @@ public class Cliente {
     @Column(length = 1000)
     private String endereco;
     @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
