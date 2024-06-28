@@ -1,9 +1,22 @@
+# @name signin
+POST http://localhost:8081/api/v1/auth/signin
+Content-Type: application/json
+
+{
+    "usuario": "admin",
+    "senha": "admin"
+}
+###
+@token = {{signin.response.body.*}}
+
 ### Chamada GET /api/v1/clientes
 GET http://localhost:8081/api/v1/clientes
+Authorization: Bearer {{token}}
 
 ### Chamada POST /api/v1/clientes
 POST http://localhost:8081/api/v1/clientes
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "nome": "Mariazinha da Silva Sauro",
@@ -18,6 +31,7 @@ Content-Type: application/json
 ### Chamada PUT /api/v1/clientes
 PUT http://localhost:8081/api/v1/clientes/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "nome": "Zezinho da Silva Sauro JUNIOR",
@@ -27,6 +41,6 @@ Content-Type: application/json
 
 ### Chamada DELETE /api/v1/clientes
 DELETE http://localhost:8081/api/v1/clientes/1
-
+Authorization: Bearer {{token}}
 
 
